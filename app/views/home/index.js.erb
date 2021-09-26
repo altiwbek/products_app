@@ -1,0 +1,6 @@
+
+document.getElementById("products")
+    .insertAdjacentHTML("beforeend", '<%= escape_javascript render('products', products: @products) %>')
+
+document.getElementById('product_remote_pagination')
+    .innerHTML = '<%= escape_javascript(paginate(@products, :remote => true)) %>';

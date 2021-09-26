@@ -1,0 +1,11 @@
+<% products.each do |product| %>
+  <div class="item">
+    <div class="product-img">
+      <%= image_tag product.image %>
+    </div>
+
+    <div class="product-title">
+      <%= product.name %> - <%= product.id %>
+    </div>
+  </div>
+<% end %>

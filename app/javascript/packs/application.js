@@ -11,3 +11,24 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    const productRemotePagination = document.getElementById('product_remote_pagination');
+
+    if(productRemotePagination !== null){
+        window.addEventListener('scroll', function(e) {
+            if(document.body.clientHeight < (window.innerHeight + window.scrollY)){
+                let next = productRemotePagination.getElementsByClassName('next')[0];
+                if (next !== undefined){
+                    let url = next.getElementsByTagName('a')[0].getAttribute('href')
+                    productRemotePagination.innerHTML = "";
+                    Rails.ajax({
+                        type: "get",
+                        url: url,
+                        dataType: "script"
+                    });
+                }
+            }
+        });
+    }
+});

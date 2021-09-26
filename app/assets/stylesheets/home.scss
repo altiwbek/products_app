@@ -74,6 +74,15 @@ body{
     float: left;
     margin: 0.65em;
     background-color: #f6f6f6;
+    height: 250px;
+    width: 220px;
+
+    .product-img{
+      height: 150px;
+      width: 100%;
+      overflow: hidden;
+      padding: 5px;
+    }
 
     img{
       display: block;
@@ -85,10 +94,11 @@ body{
       text-align: center;
       text-transform: uppercase;
       background: #fff;
-      margin: 0 20px 20px 20px;
+      margin: 10%;
       padding: 10px;
       font-weight: 900;
       color: #383737;
+      max-width: 150px;
     }
   }
 }
@@ -99,7 +109,7 @@ body{
   float: left;
   width: 25%;
   overflow: auto;
-  height: calc(100vh - 5em);
+  height: calc(100vh - 10em);
   -webkit-box-shadow: 0 7px 8px 0 rgba(51, 50, 50, 0.75);
   -moz-box-shadow:    0 7px 8px 0 rgba(51, 50, 50, 0.75);
   box-shadow:         0 7px 8px 0 rgba(51, 50, 50, 0.75);

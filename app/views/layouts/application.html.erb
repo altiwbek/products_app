@@ -11,6 +11,15 @@
   </head>
 
   <body>
-    <%= yield %>
+  <div class="container">
+    <%= render 'nav_bars/top' %>
+    <%= render 'shared/search_panel' %>
+    <div>
+      <%= render 'nav_bars/left' %>
+      <div class="main">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
   </body>
 </html>

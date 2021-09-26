@@ -1,0 +1,12 @@
+<div class="left-navbar">
+  <ul class="left-nav-items">
+    <% @product_types.each do |product_type| %>
+      <li><%= product_type.name %></li>
+      <ul class="left-nav-items">
+        <% product_type.manufacturers.each do |manufacturer| %>
+          <li><%= manufacturer.name %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </ul>
+</div>
