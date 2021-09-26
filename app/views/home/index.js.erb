@@ -1,6 +1,9 @@
-
-document.getElementById("products")
+<% if (params[:product_type_id] || params[:manufacturer_id]) && params[:page].blank? %>
+  document.getElementById("products").innerHTML = '<%= escape_javascript render('products', products: @products) %>'
+<% else %>
+  document.getElementById("products")
     .insertAdjacentHTML("beforeend", '<%= escape_javascript render('products', products: @products) %>')
+<% end %>
 
 document.getElementById('product_remote_pagination')
-    .innerHTML = '<%= escape_javascript(paginate(@products, :remote => true)) %>';
+  .innerHTML = '<%= escape_javascript(paginate(@products, :remote => true)) %>';
