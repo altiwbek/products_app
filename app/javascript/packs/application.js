@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if(productRemotePagination !== null){
         window.addEventListener('scroll', function(e) {
             if(document.body.clientHeight < (window.innerHeight + window.scrollY)){
-                let next = productRemotePagination.getElementsByClassName('next')[0];
+                let next = document.getElementsByClassName('next')[0];
                 if (next !== undefined){
                     let url = next.getElementsByTagName('a')[0].getAttribute('href')
                     productRemotePagination.innerHTML = "";
