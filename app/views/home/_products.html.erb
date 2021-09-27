@@ -1,11 +1,13 @@
 <% products.each do |product| %>
   <div class="item">
-    <div class="product-img">
-      <%= image_tag product.image %>
-    </div>
+    <div class="on-hover">
+      <div class="product-img">
+        <%= image_tag product.image %>
+      </div>
 
-    <div class="product-title">
-      <%= product.name %>
+      <div class="product-title">
+        <%= product.name %>
+      </div>
     </div>
   </div>
 <% end %>

@@ -102,6 +102,15 @@ body{
       max-width: 150px;
     }
   }
+
+  .on-hover:hover {
+    border: 1px solid #7dae3b;
+    box-shadow: 0 0 10px #7dae3b;
+    transform: translateY(-5px) translateX(-5px);
+    width: 225px;
+    height: 255px;
+    background-color: #f6f6f6;
+  }
 }
 
 .left-navbar{
