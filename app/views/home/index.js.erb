@@ -1,5 +1,20 @@
 <% if (params[:product_type_id] || params[:manufacturer_id]) && params[:page].blank? %>
   document.getElementById("products").innerHTML = '<%= escape_javascript render('products', products: @products) %>'
+
+  if(typeof url === undefined){
+    const url = new URL(window.location);
+  } else {
+    url = new URL(window.location);
+  }
+  <% if params[:product_type_id] %>
+    url.searchParams.set('product_type_id', '<%= params[:product_type_id] %>');
+  <% end %>
+  <% if params[:manufacturer_id] %>
+    url.searchParams.set('manufacturer_id', '<%= params[:manufacturer_id] %>');
+  <% end %>
+
+  window.history.pushState({}, '', url);
+
 <% else %>
   document.getElementById("products")
     .insertAdjacentHTML("beforeend", '<%= escape_javascript render('products', products: @products) %>')

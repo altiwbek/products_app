@@ -24,3 +24,21 @@ manufacturer_ids = Manufacturer.all.ids
     product.product_types << product_type
   end
 end
+
+product_type = ProductType.first
+30.times do
+  product_name = 'VOLUPTATEM'
+  product = Product.create(name: product_name, manufacturer: Manufacturer.first)
+  product.image.attach(io: File.open(Rails.root.join("app/assets/images/seed/fresh_meat_0.png")),
+                       filename: "#{product_name.underscore.gsub(' ', '_')}", content_type: 'image/png')
+  product.product_types << product_type
+end
+
+product_type = ProductType.last
+30.times do
+  product_name = 'VOLUPTATEM'
+  product = Product.create(name: product_name, manufacturer: Manufacturer.last)
+  product.image.attach(io: File.open(Rails.root.join("app/assets/images/seed/fresh_bananas_0.png")),
+                       filename: "#{product_name.underscore.gsub(' ', '_')}", content_type: 'image/png')
+  product.product_types << product_type
+end

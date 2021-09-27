@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       let manufacturerId = childItem.getAttribute('data-manufacturer-id');
       Rails.ajax({
         type: "get",
-        url: '/',
+        url: window.location.href,
         data: "product_type_id=" + productTypeId + "&manufacturer_id=" + manufacturerId,
         dataType: "script"
       });

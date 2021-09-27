@@ -5,7 +5,7 @@
         <span class="menu-first-item"><%= product_type.name %></span>
 
         <ul class="left-nav-items" style="display: none;">
-          <% product_type.manufacturers.each do |manufacturer| %>
+          <% product_type.manufacturers.distinct.each do |manufacturer| %>
             <li class="menu-nested-item"
                 data-type-id="<%= product_type.id %>"
                 data-manufacturer-id="<%= manufacturer.id %>">
